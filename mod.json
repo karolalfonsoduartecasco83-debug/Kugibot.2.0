@@ -1,0 +1,46 @@
+{
+  "geode": "4.0.0",
+  "id": "tuusuario.kugibot",
+  "name": "KugiBot",
+  "version": "v1.0.0",
+  "developer": "TuNombre",
+  "description": "Mod de Showcase y Bot para Geometry Dash con trazado de muertes, velocidad, trazo de ruta y contador de clics.",
+  "settings": {
+    "bot-enabled": {
+      "name": "Activar Bot",
+      "description": "Activa o desactiva la ejecución del Showcase Bot.",
+      "type": "bool",
+      "default": true
+    },
+    "bot-speed": {
+      "name": "Velocidad del Bot",
+      "description": "Multiplicador de velocidad para la reproducción o análisis del bot.",
+      "type": "float",
+      "default": 1.0,
+      "min": 0.1,
+      "max": 3.0,
+      "control": {
+        "slider": true,
+        "step": 0.1
+      }
+    },
+    "trace-deaths": {
+      "name": "Trazar Posibles Muertes",
+      "description": "Coloca una marca visual en la posición exacta donde el jugador o bot muere.",
+      "type": "bool",
+      "default": true
+    },
+    "show-trail": {
+      "name": "Trazo del Bot",
+      "description": "Muestra una línea continua dibujando el rastro exacto por donde pasó el jugador.",
+      "type": "bool",
+      "default": true
+    },
+    "show-clicks": {
+      "name": "Mostrar Clics",
+      "description": "Notifica y muestra en pantalla cada clic registrado por el bot.",
+      "type": "bool",
+      "default": true
+    }
+  }
+}
