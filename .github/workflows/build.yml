@@ -1,0 +1,31 @@
+name: Compilar KugiBot para Android
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - name: Android 64-bit
+            os: ubuntu-latest
+            target: Android64
+          - name: Android 32-bit
+            os: ubuntu-latest
+            target: Android32
+
+    name: Build ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Geode Mod
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: v4.1.1
+          target: ${{ matrix.config.target }}
